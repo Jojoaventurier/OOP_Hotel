@@ -37,10 +37,10 @@ class Client {
         return $this;
     }
  
-    public function getReservations()
+    /*public function getReservations()
     {
         return $this->reservations;
-    }
+    }*/
 
     public function setReservations($reservations)
     {
@@ -57,6 +57,12 @@ class Client {
         $this->nom ." ". $this->prenom;
     }
 
+    public function getReservations() {
 
-    //GET RESERVATIONS
-}
+        foreach ($this->reservations as $reservation) {
+            $result .= $reservation->getClient() . " - " . $reservation->getChambre();
+        } 
+        return $result;
+    }
+} 
+

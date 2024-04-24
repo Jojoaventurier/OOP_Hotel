@@ -95,7 +95,22 @@ class Hotel {
     public function ajouterChambre(Chambre $chambre) {
         $this->chambres[] = $chambre;
     }
+
+    public function __toString() {
+        return $this->name;
+    }
+    
+    public function getInfos() {
+        return $this . "<br>"
+        . $this->adresse ." ". $this->cp. " ". $this->ville. "<br>";
+       //ajouter la suite 
+    }
+
+    public function getReservations() {
+
+    }
 }
+
 
     //GET INFOS
     //get Reservations
