@@ -91,4 +91,8 @@ class Hotel {
 
         return $this;
     }
+
+    public function ajouterChambre(Chambre $chambre) {
+        $this->chambres[] = $chambre;
+    }
 }

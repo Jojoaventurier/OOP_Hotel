@@ -7,18 +7,18 @@ class Reservation {
     private Chambre $chambre;
     private DateTime $dateArrivee;
     private Datetime $dateDepart;
-    private int $nbNuits;
+    private Dateinterval $nbNuits;
 
     public function __construct(Client $client, Chambre $chambre, string $dateArrivee, string $dateDepart) {
     $this->client = $client;
     $this->chambre = $chambre;
     $this->dateArrivee = new DateTime($dateArrivee);
     $this->dateDepart = new DateTime($dateDepart);
-    $diff = $tdateArrivee->diff($dateDepart);
+    $diff = $this->dateArrivee->diff($this->dateDepart);
     $diff->format('%d');
     $this->nbNuits = $diff;
-    $this->client = reserver($this);
-    $this->chambre = reserver($this);
+    $this->client->reserver($this);
+    $this->chambre->reserver($this);
     }
 
     public function getClient()
