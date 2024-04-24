@@ -9,7 +9,6 @@ class Chambre {
     private int $prixNuit;
     private bool $disponible;
 
-
     public function __construct(int $numChambre, int $nbLits, bool $wifi, int $prixNuit) {
         $this->numChambre = $numChambre;
         $this->nbLits = $nbLits;
