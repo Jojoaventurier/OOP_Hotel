@@ -117,10 +117,6 @@ class Hotel {
         . "Nombre de chambres : ". $this->getNbChambres() ;
        //ajouter la suite 
     }
-
-    public function getReservations() {
-
-    }
 }
 
 

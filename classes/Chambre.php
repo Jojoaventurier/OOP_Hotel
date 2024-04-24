@@ -59,10 +59,13 @@ class Chambre {
     }
 
     public function getWifi()
-    {
-        return $this->wifi;
+    {   if ($this->wifi == true) {
+        return "oui";
+        } else {
+            return "non";
+        }
     }
-
+       
     public function setWifi($wifi)
     {
         $this->wifi = $wifi;
@@ -90,6 +93,18 @@ class Chambre {
     public function setDisponible($disponible)
     {
         $this->disponible = $disponible;
+
+        return $this;
+    }
+
+    public function getReservations()
+    {
+        return $this->reservations;
+    }
+
+    public function setReservations($reservations)
+    {
+        $this->reservations = $reservations;
 
         return $this;
     }

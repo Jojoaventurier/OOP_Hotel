@@ -53,15 +53,25 @@ class Client {
         $this->reservations[] = $reservation;
     } 
 
+    public function prixTotal() {
+
+    }
+
     public function __toString() {
        return $this->firstName ." ". $this->lastName;
     }
 
     public function getReservations() {
-            $result = "Chambres réservées :<br>";
+            $result = "Réservations de ". $this." :<br>";
         foreach ($this->reservations as $reservation) {
-            $result .=  $reservation->getClient() . " - " . $reservation->getChambre() . 
-            " - du ". $reservation->getdateArrivee()->format("d-m-y")." au ". $reservation->getDateDepart()->format("d-m-y") ."<br>";
+            $result .= "Hotel : ".  
+            $reservation->getChambre()->getHotel(). " / ". 
+            $reservation->getChambre() ." (". 
+            $reservation->getChambre()->getNbLits() . " lits - ". 
+            $reservation->getChambre()->getPrixNuit(). " € - Wifi : ".
+            $reservation->getChambre()->getWifi(). ") - du ". 
+            $reservation->getdateArrivee()->format("d-m-y")." au ". 
+            $reservation->getDateDepart()->format("d-m-y") ."<br>";
         } 
         return $result;
     }
