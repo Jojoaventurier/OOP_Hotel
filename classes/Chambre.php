@@ -8,6 +8,7 @@ class Chambre {
     private bool $wifi;
     private int $prixNuit;
     private bool $disponible;
+    private array $reservations;
 
     public function __construct(int $numChambre, int $nbLits, bool $wifi, int $prixNuit) {
         $this->numChambre = $numChambre;
@@ -15,6 +16,7 @@ class Chambre {
         $this->wifi = $wifi;
         $this->prixNuit = $prixNuit;
         $this->disponible = true;
+        $this->reservations = [];
     }
 
     public function getNumChambre()
