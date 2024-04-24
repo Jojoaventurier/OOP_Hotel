@@ -54,13 +54,14 @@ class Client {
     } 
 
     public function __toString() {
-        $this->nom ." ". $this->prenom;
+       return $this->firstName ." ". $this->lastName;
     }
 
     public function getReservations() {
-
+            $result = "Chambres réservées :<br>";
         foreach ($this->reservations as $reservation) {
-            $result .= $reservation->getClient() . " - " . $reservation->getChambre();
+            $result .=  $reservation->getClient() . " - " . $reservation->getChambre() . 
+            " - du ". $reservation->getdateArrivee()->format("d-m-y")." au ". $reservation->getDateDepart()->format("d-m-y") ."<br>";
         } 
         return $result;
     }

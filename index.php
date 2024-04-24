@@ -9,13 +9,19 @@ require 'classes/Reservation.php';
 $geoffroy = new Client("Geoffroy", "Maur");
 $hilton = new Hotel("Hilton **** Strasbourg", "10 route de la Gare", "67000", "STRASBOURG", 30);
 $chambre1Hilton = new Chambre($hilton, 1, 2, false, 120); 
+$chambre2Hilton = new Chambre($hilton, 2, 2, false, 120); 
+$chambre3Hilton = new Chambre($hilton, 3, 2, false, 120); 
+$chambre4Hilton = new Chambre($hilton, 4, 2, false, 120); 
+$chambre5Hilton = new Chambre($hilton, 5, 2, false, 120); 
 
 
 $resa1 = new Reservation($geoffroy, $chambre1Hilton, "01-01-2024", "03-01-2024");
+$resa1 = new Reservation($geoffroy, $chambre2Hilton, "05-01-2024", "07-01-2024");
+$resa1 = new Reservation($geoffroy, $chambre3Hilton, "09-01-2024", "10-01-2024");
 
-echo $hilton->getInfos();
+//echo $hilton->getInfos();
 
-
+echo $geoffroy->getReservations();
 
 
 
