@@ -56,4 +56,7 @@ class Client {
     public function __toString() {
         $this->nom ." ". $this->prenom;
     }
+
+
+    //GET RESERVATIONS
 }
