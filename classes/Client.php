@@ -49,6 +49,10 @@ class Client {
         return $this;
     }
 
+    public function reserver(Reservation $reservation) {
+        $this->reservations[] = $reservation;
+    } 
+
     public function __toString() {
         $this->nom ." ". $this->prenom;
     }

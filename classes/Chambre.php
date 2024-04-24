@@ -79,6 +79,11 @@ class Chambre {
         return $this;
     }
 
+    public function reserver(Reservation  $reservation) {
+        $this->disponible = false;
+        $this->reservations[] = $reservation;
+    }
+
     public function __toString() {
         return "Chambre ".$this->numChambre." ";  
     }

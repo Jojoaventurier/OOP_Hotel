@@ -17,8 +17,8 @@ class Reservation {
     $diff = $tdateArrivee->diff($dateDepart);
     $diff->format('%d');
     $this->nbNuits = $diff;
-    $this->client = ajouterReservation($this);
-    $this->chambre = ajouterReservation($this);
+    $this->client = reserver($this);
+    $this->chambre = reserver($this);
     }
 
     public function getClient()
@@ -80,4 +80,5 @@ class Reservation {
 
         return $this;
     }
+
 }
