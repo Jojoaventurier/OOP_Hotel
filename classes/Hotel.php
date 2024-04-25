@@ -103,10 +103,7 @@ class Hotel {
         };
     }*/
 
-    public function chambresLibres() {
-        ;
-    }
-    
+ 
     public function getInfos() {
         return $this . "<br>"
         . $this->adresse ." ". $this->cp. " ". $this->ville. "<br>"
@@ -115,6 +112,26 @@ class Hotel {
     }
 
     public function getStatut() {
+
+
+        <table class="uk-table uk-table-striped">
+    <thead>
+        <tr>
+            <th>Table Heading</th>
+            <th>Table Heading</th>
+            <th>Table Heading</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>Table Data</td>
+            <td>Table Data</td>
+            <td>Table Data</td>
+        </tr>
+      
+    </tbody>
+</table>
         $result = "";
 
         foreach ($this->chambres as $chambre) {
@@ -129,20 +146,25 @@ class Hotel {
         $totalReservations = 0;
         foreach($this->chambres as $chambre) {
             
-            $totalReservations += $chambre->getAllReservations();
+            $totalReservations += $chambre->getCountReservations();
 
         }return $totalReservations;
     }
 
     public function getReservations() {
-        $result = "Réservations de ".$this." :<br>
-        ". $this->getNbreservations(). " réservations<br>";
 
+        $result = "Réservations de l'hôtel ".$this." :<br>
+        ". $this->getNbReservations(). " réservations<br>";
+
+        if ($this->getNbReservations() == 0) {
+            return $result = "Réservations de l'hôtel ".$this." :<br>
+            Aucune réservation<br>";  
+        } else {
         foreach ($this->chambres as $chambre) {
 
          $result .= $chambre->getReservations() ;
         }return $result;
-    
+        }
     }
 
     public function __toString() {

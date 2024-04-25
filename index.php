@@ -8,6 +8,7 @@ require 'classes/Reservation.php';
 
 $geoffroy = new Client("Geoffroy", "MAUR");
 $virgile = new Client("Virgile", "GIBELLO");
+$lucas = new Client("Lucas", "GIAMBERINI");
 
 $hilton = new Hotel("Hilton **** Strasbourg", "10 route de la Gare", "67000", "STRASBOURG", 30);
 $regent = new Hotel("Régent **** Paris", "5 rue de la Seine", "75000", "Paris", 25);
@@ -27,20 +28,24 @@ $chambre2Regent = new Chambre($regent, 2, 2, true, 450);
 
 $resa1 = new Reservation($geoffroy, $chambre1Hilton, "01-01-2024", "03-01-2024");
 $resa2 = new Reservation($geoffroy, $chambre2Hilton, "05-01-2024", "07-01-2024");
-$resa3 = new Reservation($geoffroy, $chambre3Hilton, "09-01-2024", "10-01-2024");
-$resa4 = new Reservation($virgile, $chambre2Regent, "09-01-2024", "10-01-2024");
+$resa3 = new Reservation($lucas, $chambre3Hilton, "09-01-2024", "10-01-2024");
+$resa4 = new Reservation($virgile, $chambre17Hilton, "08-01-2024", "11-01-2024");
+
 
 //echo $hilton->getInfos();
 
-//echo $geoffroy->getReservations();
-//echo $hilton->getStatut();
+
+echo $regent->getReservations();
 
 echo $hilton->getReservations();
-//echo $hilton->getNbReservations();
+echo $geoffroy->getReservations();
+echo $hilton->getStatut();
+
+
+?>
 
 
 
-/*
 
 
 <!DOCTYPE html>
@@ -55,40 +60,7 @@ echo $hilton->getReservations();
 </head>
 <body>
 
-<nav class="uk-navbar-container">
-    <div class="uk-container">
-        <div uk-navbar>
 
-            <div class="uk-navbar-left">
-
-                <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">Logo</a>
-
-                <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#">
-                            <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                            Features
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="uk-navbar-item">
-                    <div>Some <a href="#">Link</a></div>
-                </div>
-
-                <div class="uk-navbar-item">
-                    <form action="javascript:void(0)">
-                        <input class="uk-input uk-form-width-small" type="text" placeholder="Input" aria-label="Input">
-                        <button class="uk-button uk-button-default">Button</button>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</nav>
     
 </body>
 </html>
-*/
