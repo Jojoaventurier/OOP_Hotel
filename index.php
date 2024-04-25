@@ -35,11 +35,6 @@ $resa3 = new Reservation($lucas, $chambre17Hilton, "09-01-2024", "10-01-2024");
 
 //echo $hilton->getInfos();
 
-echo $hilton->getInfos();
-echo $regent->getReservations();
-echo $hilton->getReservations();
-echo $geoffroy->getReservations();
-echo $hilton->getStatut();
 
 
 ?>
@@ -59,7 +54,16 @@ echo $hilton->getStatut();
 </head>
 <body>
 
+<?php
 
+echo $hilton->getInfos();
+echo $regent->getReservations();
+echo $hilton->getReservations();
+echo $geoffroy->getReservations();
+echo $hilton->getStatut();
+
+
+?>
     
 </body>
 </html>
