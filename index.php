@@ -37,7 +37,7 @@ $resa4 = new Reservation($virgile, $chambre17Hilton, "09-01-2024", "10-01-2024")
 
 
 echo $hilton->getReservations();
-echo $regent->getreservations();
+
 
 
 /*

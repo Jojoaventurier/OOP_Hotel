@@ -115,7 +115,7 @@ class Hotel {
     }
 
     public function getStatut() {
-        $result = "Réservations de " .$this."<br>";
+        $result = "";
 
         foreach ($this->chambres as $chambre) {
             $result .= "Chambre ". $chambre->getnumChambre(). "
