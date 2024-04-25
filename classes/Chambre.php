@@ -86,8 +86,11 @@ class Chambre {
     }
 
     public function getDisponible()
-    {
-        return $this->disponible;
+    {   if ($this->disponible == true) {
+        return "DISPONIBLE";
+        } else {
+            return "RESERVEE";
+        }
     }
 
     public function setDisponible($disponible)
@@ -98,8 +101,16 @@ class Chambre {
     }
 
     public function getReservations()
-    {
-        return $this->reservations;
+    {   $result = "";
+        
+        foreach ($this->reservations as $reservation) {
+            $result.= $reservation->getClient().
+            " - ". $reservation->getChambre() .
+           " - du ". 
+            $reservation->getdateArrivee()->format("d-m-y")." au ". 
+            $reservation->getDateDepart()->format("d-m-y") ."<br>";"<br>";
+        } return $result;
+        
     }
 
     public function setReservations($reservations)

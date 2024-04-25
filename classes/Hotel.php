@@ -81,10 +81,10 @@ class Hotel {
     }
 
     public function getChambres()
-    {
+    {  
         return $this->chambres;
     }
-
+    
     public function setChambres($chambres)
     {
         $this->chambres = $chambres;
@@ -106,10 +106,6 @@ class Hotel {
     public function chambresLibres() {
         ;
     }
-
-    public function __toString() {
-        return $this->name;
-    }
     
     public function getInfos() {
         return $this . "<br>"
@@ -117,13 +113,31 @@ class Hotel {
         . "Nombre de chambres : ". $this->getNbChambres() ;
        //ajouter la suite 
     }
+
+    public function getStatut() {
+        $result = "Réservations de " .$this."<br>";
+
+        foreach ($this->chambres as $chambre) {
+            $result .= "Chambre ". $chambre->getnumChambre(). "
+             ". $chambre->getPrixNuit(). "€ ". $chambre->getWifi(). " ".$chambre->getDisponible() ."<br>";
+        } return $result;
+    }
+
+    public function getReservations() {
+        $result2 = "Réservations de ".$this." :<br>";
+        $result2 .= count($this->chambres)." réservations <br>";
+
+
+        foreach($this->chambres as $chambre) {
+            echo $chambre->getReservations();
+    }return $result2;   
 }
 
 
-    //get Reservations
-    //GET STATUT
-
-
+    public function __toString() {
+        return $this->name;
+    }
+}
 
    /* 
     <table class="uk-table uk-table-striped">
