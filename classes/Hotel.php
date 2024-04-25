@@ -123,16 +123,27 @@ class Hotel {
         } return $result;
     }
 
-    public function getReservations() {
-        $result2 = "Réservations de ".$this." :<br>";
-        $result2 .= count($this->chambres)." réservations <br>";
 
-
+    public function getNbReservations() {
+           
+        $totalReservations = 0;
         foreach($this->chambres as $chambre) {
-            echo $chambre->getReservations();
-    }return $result2;   
-}
+            
+            $totalReservations += $chambre->getAllReservations();
 
+        }return $totalReservations;
+    }
+
+    public function getReservations() {
+        $result = "Réservations de ".$this." :<br>
+        ". $this->getNbreservations(). " réservations<br>";
+
+        foreach ($this->chambres as $chambre) {
+
+         $result .= $chambre->getReservations() ;
+        }return $result;
+    
+    }
 
     public function __toString() {
         return $this->name;

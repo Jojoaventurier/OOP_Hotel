@@ -125,9 +125,16 @@ class Chambre {
         $this->reservations[] = $reservation;
     }
 
+    public function getAllReservations() {
+        foreach ($this->reservations as $reservation) {
+           
+        } return   count($this->reservations);
+    }
+
+  
+
     public function __toString() {
         return "Chambre ".$this->numChambre." ";  
     }
-
 
 }

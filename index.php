@@ -28,15 +28,15 @@ $chambre2Regent = new Chambre($regent, 2, 2, true, 450);
 $resa1 = new Reservation($geoffroy, $chambre1Hilton, "01-01-2024", "03-01-2024");
 $resa2 = new Reservation($geoffroy, $chambre2Hilton, "05-01-2024", "07-01-2024");
 $resa3 = new Reservation($geoffroy, $chambre3Hilton, "09-01-2024", "10-01-2024");
-$resa4 = new Reservation($virgile, $chambre17Hilton, "09-01-2024", "10-01-2024");
+$resa4 = new Reservation($virgile, $chambre2Regent, "09-01-2024", "10-01-2024");
 
 //echo $hilton->getInfos();
 
 //echo $geoffroy->getReservations();
 //echo $hilton->getStatut();
 
-
 echo $hilton->getReservations();
+//echo $hilton->getNbReservations();
 
 
 
