@@ -26,10 +26,10 @@ $chambre1Regent = new Chambre($regent, 1, 2, true, 450);
 $chambre2Regent = new Chambre($regent, 2, 2, true, 450); 
 
 
-$resa1 = new Reservation($geoffroy, $chambre1Hilton, "01-01-2024", "03-01-2024");
-$resa2 = new Reservation($geoffroy, $chambre2Hilton, "05-01-2024", "07-01-2024");
+$resa1 = new Reservation($geoffroy, $chambre1Hilton, "11-03-2024", "15-03-2024");
+$resa2 = new Reservation($geoffroy, $chambre2Hilton, "01-04-2024", "17-04-2024");
 $resa3 = new Reservation($lucas, $chambre3Hilton, "09-01-2024", "10-01-2024");
-$resa4 = new Reservation($virgile, $chambre17Hilton, "08-01-2024", "11-01-2024");
+
 
 
 //echo $hilton->getInfos();

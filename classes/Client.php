@@ -54,7 +54,10 @@ class Client {
     } 
 
     public function prixTotal() {
-
+        $result = 0;
+        foreach ($this->reservations as $reservation) {
+            $result += $reservation->getChambre()->getPrixNuit() * $reservation->getNbNuits()->format('%d');
+        } return $result;
     }
 
     public function acessChambreAttributes() {
@@ -68,8 +71,8 @@ class Client {
     public function getReservations() {
             $result = "<h4>Réservations de ". $this." :</h4>";
         foreach ($this->reservations as $reservation) {
-            $result .= "Hotel : ".  
-            $reservation->getChambre()->getHotel(). " / ". 
+            $result .= "<strong>Hotel : ".  
+            $reservation->getChambre()->getHotel(). "</strong> / ". 
             $reservation->getChambre() ." (". 
             $reservation->getChambre()->getNbLits() . " lits - ". 
             $reservation->getChambre()->getPrixNuit(). " € - Wifi : ".
@@ -77,7 +80,7 @@ class Client {
             $reservation->getdateArrivee()->format("d-m-y")." au ". 
             $reservation->getDateDepart()->format("d-m-y") ."<br>";
         } 
-        return $result;
+        return $result . "Total : ". $this->prixTotal(). "€<br>";
     }
 } 
 
