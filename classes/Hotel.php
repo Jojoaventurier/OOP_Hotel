@@ -95,20 +95,14 @@ class Hotel {
     public function ajouterChambre(Chambre $chambre) {
         $this->chambres[] = $chambre;
     }
-
-   /* public function ChambresReservees() {
-        
-        foreach ($chambres[] as $chambre){
-            return $chambre->reservations 
-        };
-    }*/
-
  
     public function getInfos() {
-        return $this . "<br>"
+        return "<h4>". $this . "</h4>"
         . $this->adresse ." ". $this->cp. " ". $this->ville. "<br>"
-        . "Nombre de chambres : ". $this->getNbChambres() ;
-       //ajouter la suite 
+        . "Nombre de chambres : ". $this->getNbChambres()."<br>"
+        . "Nombre de chambres réservées : ".$this->getNbReservations()."<br>"
+        . "Nombre de chambres libres : ". $this->getChambresLibres()."<br>";
+
     }
 
     public function getStatut() {
@@ -141,7 +135,6 @@ foreach ($this->chambres as $chambre) {
         
     }
 
-
     public function getNbReservations() {
            
         $totalReservations = 0;
@@ -152,13 +145,20 @@ foreach ($this->chambres as $chambre) {
         }return $totalReservations;
     }
 
+    public function getChambresLibres() {
+        $result = $this->getNbChambres() - $this->getNbReservations() ;
+        return $result;
+    } 
+
+    
+
     public function getReservations() {
 
-        $result = "Réservations de l'hôtel ".$this." :<br>
+        $result = "<h4>Réservations de l'hôtel ".$this." :</h4>
         ". $this->getNbReservations(). " réservations<br>";
 
         if ($this->getNbReservations() == 0) {
-            return $result = "Réservations de l'hôtel ".$this." :<br>
+            return $result = "<h4>Réservations de l'hôtel ".$this." :</h4>
             Aucune réservation<br>";  
         } else {
         foreach ($this->chambres as $chambre) {
@@ -173,31 +173,3 @@ foreach ($this->chambres as $chambre) {
     }
 }
 
-   /* 
-    <table class="uk-table uk-table-striped">
-    <thead>
-        <tr>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Table Data</td>
-            <td>Table Data</td>
-            <td>Table Data</td>
-        </tr>
-        <tr>
-            <td>Table Data</td>
-            <td>Table Data</td>
-            <td>Table Data</td>
-        </tr>
-        <tr>
-            <td>Table Data</td>
-            <td>Table Data</td>
-            <td>Table Data</td>
-        </tr>
-    </tbody>
-</table>
- */

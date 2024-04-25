@@ -66,7 +66,7 @@ class Client {
     }
 
     public function getReservations() {
-            $result = "Réservations de ". $this." :<br>";
+            $result = "<h4>Réservations de ". $this." :</h4>";
         foreach ($this->reservations as $reservation) {
             $result .= "Hotel : ".  
             $reservation->getChambre()->getHotel(). " / ". 

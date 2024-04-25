@@ -34,18 +34,14 @@ $resa4 = new Reservation($virgile, $chambre17Hilton, "08-01-2024", "11-01-2024")
 
 //echo $hilton->getInfos();
 
-
+echo $hilton->getInfos();
 echo $regent->getReservations();
-
 echo $hilton->getReservations();
 echo $geoffroy->getReservations();
 echo $hilton->getStatut();
 
 
 ?>
-
-
-
 
 
 <!DOCTYPE html>
