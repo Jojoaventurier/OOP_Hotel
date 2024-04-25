@@ -112,32 +112,33 @@ class Hotel {
     }
 
     public function getStatut() {
+        
+        $result = "";
+          
 
-
-        <table class="uk-table uk-table-striped">
+       echo '<table class="uk-table uk-table-striped">
     <thead>
         <tr>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
-            <th>Table Heading</th>
+            <th>CHAMBRE</th>
+            <th>PRIX</th>
+            <th>WIFI</th>
+            <th>ETAT</th>
         </tr>
     </thead>
-    <tbody>
-
-        <tr>
-            <td>Table Data</td>
-            <td>Table Data</td>
-            <td>Table Data</td>
-        </tr>
-      
+    <tbody>';
+    foreach ($this->chambres as $chambre) {
+        $result .= "<tr><td>Chambre ". $chambre->getnumChambre(). "</td><td>
+         ". $chambre->getPrixNuit(). "€ </td><td> ". $chambre->getWifi(). "</td><td>".$chambre->getDisponible() ."</td></tr><br>";
+    } return $result; '
     </tbody>
-</table>
-        $result = "";
+</table>';
 
-        foreach ($this->chambres as $chambre) {
-            $result .= "Chambre ". $chambre->getnumChambre(). "
-             ". $chambre->getPrixNuit(). "€ ". $chambre->getWifi(). " ".$chambre->getDisponible() ."<br>";
-        } return $result;
+
+foreach ($this->chambres as $chambre) {
+    $result .= "Chambre ". $chambre->getnumChambre(). "
+     ". $chambre->getPrixNuit(). "€ ". $chambre->getWifi(). " ".$chambre->getDisponible() ."<br>";
+} return $result;
+        
     }
 
 
