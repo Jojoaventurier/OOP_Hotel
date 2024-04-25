@@ -65,6 +65,14 @@ class Chambre {
             return "non";
         }
     }
+
+    public function getWifiIcon() {
+        if ($this->wifi == true) {
+            return "<span uk-icon='rss'></span>";
+        } else if ($this->wifi == false) {
+            return null; 
+        }
+    }
        
     public function setWifi($wifi)
     {
@@ -87,9 +95,9 @@ class Chambre {
 
     public function getDisponible()
     {   if ($this->disponible == true) {
-        return "DISPONIBLE";
+        return "<span class='uk-label-success'>DISPONIBLE</span>";
         } else {
-            return "RESERVEE";
+            return "<span class='uk-label-danger'>RESERVEE</span>";
         }
     }
 

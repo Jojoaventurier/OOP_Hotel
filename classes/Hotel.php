@@ -110,29 +110,23 @@ class Hotel {
         $result = "";
           
 
-       echo '<table class="uk-table uk-table-striped">
-    <thead>
-        <tr>
-            <th>CHAMBRE</th>
-            <th>PRIX</th>
-            <th>WIFI</th>
-            <th>ETAT</th>
-        </tr>
-    </thead>
-    <tbody>';
-    foreach ($this->chambres as $chambre) {
-        $result .= "<tr><td>Chambre ". $chambre->getnumChambre(). "</td><td>
-         ". $chambre->getPrixNuit(). "€ </td><td> ". $chambre->getWifi(). "</td><td>".$chambre->getDisponible() ."</td></tr><br>";
-    } return $result; '
-    </tbody>
-</table>';
-
-
-foreach ($this->chambres as $chambre) {
-    $result .= "Chambre ". $chambre->getnumChambre(). "
-     ". $chambre->getPrixNuit(). "€ ". $chambre->getWifi(). " ".$chambre->getDisponible() ."<br>";
-} return $result;
-        
+       echo '<h5>Statuts des chambres de <strong>'. $this. '</strong></h5>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>CHAMBRE</th>
+                        <th>PRIX</th>
+                        <th>WIFI</th>
+                        <th>ETAT</th>
+                    </tr>
+                </thead>
+                <tbody>';
+                foreach ($this->chambres as $chambre) {
+                    $result .= "<tr><td>Chambre ". $chambre->getnumChambre(). "</td><td>
+                    ". $chambre->getPrixNuit(). "€ </td><td> ". $chambre->getWifiIcon(). "</td><td>".$chambre->getDisponible() ."</td></tr>";
+                } return $result; '
+                </tbody>
+            </table>'; 
     }
 
     public function getNbReservations() {
@@ -155,7 +149,7 @@ foreach ($this->chambres as $chambre) {
     public function getReservations() {
 
         $result = "<h4>Réservations de l'hôtel ".$this." :</h4>
-        ". $this->getNbReservations(). " réservations<br>";
+        <span class='uk-label-success'>". $this->getNbReservations(). " réservations</span><br>";
 
         if ($this->getNbReservations() == 0) {
             return $result = "<h4>Réservations de l'hôtel ".$this." :</h4>

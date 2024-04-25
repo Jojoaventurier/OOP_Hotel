@@ -60,16 +60,14 @@ class Client {
         } return $result;
     }
 
-    public function acessChambreAttributes() {
-        
+    public function getNbReservations () {
+        return count($this->reservations). " réservations<br>";
     }
-
-    public function __toString() {
-       return $this->firstName ." ". $this->lastName;
-    }
+  
 
     public function getReservations() {
-            $result = "<h4>Réservations de ". $this." :</h4>";
+            $result = "<h4>Réservations de ". $this." :</h4>". 
+            "<span class='uk-label uk-label-success'>".$this->getNbReservations()."</span><br>";
         foreach ($this->reservations as $reservation) {
             $result .= "<strong>Hotel : ".  
             $reservation->getChambre()->getHotel(). "</strong> / ". 
@@ -82,5 +80,9 @@ class Client {
         } 
         return $result . "Total : ". $this->prixTotal(). "€<br>";
     }
+
+    public function __toString() {
+        return $this->firstName ." ". $this->lastName;
+     }
 } 
 
