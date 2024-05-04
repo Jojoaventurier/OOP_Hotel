@@ -9,6 +9,7 @@ require 'classes/Reservation.php';
 $geoffroy = new Client("Geoffroy", "MAUR");
 $virgile = new Client("Virgile", "GIBELLO");
 $lucas = new Client("Lucas", "GIAMBERINI");
+$irina= new Client("Irina", "JURAVLE");
 
 $hilton = new Hotel("Hilton **** Strasbourg", "10 route de la Gare", "67000", "STRASBOURG", 30);
 $regent = new Hotel("Régent **** Paris", "5 rue de la Seine", "75000", "Paris", 25);
@@ -22,6 +23,7 @@ $chambre16Hilton = new Chambre($hilton, 16, 2, true, 300);
 $chambre17Hilton = new Chambre($hilton, 17, 2, true, 300); 
 $chambre18Hilton = new Chambre($hilton, 18, 2, true, 300); 
 $chambre19Hilton = new Chambre($hilton, 19, 2, true, 300); 
+$chambre20Hilton = new Chambre($hilton, 20, 2, true, 450); 
 
 $chambre1Regent = new Chambre($regent, 1, 2, true, 450); 
 $chambre2Regent = new Chambre($regent, 2, 2, true, 450); 
@@ -30,7 +32,10 @@ $chambre2Regent = new Chambre($regent, 2, 2, true, 450);
 $resa1 = new Reservation($geoffroy, $chambre3Hilton, "11-03-2024", "15-03-2024");
 $resa2 = new Reservation($geoffroy, $chambre4Hilton, "01-04-2024", "17-04-2024");
 $resa3 = new Reservation($lucas, $chambre17Hilton, "09-01-2024", "10-01-2024");
+$resa4 = new Reservation($irina, $chambre19Hilton,"10-01-2024", "12-01-2024");
+$resa5 = new Reservation($irina, $chambre20Hilton,"13-01-2024", "15-01-2024");
 
+ 
 
 
 //echo $hilton->getInfos();
@@ -61,6 +66,7 @@ echo $regent->getReservations();
 echo $hilton->getReservations();
 echo $geoffroy->getReservations();
 echo $hilton->getStatut();
+echo $irina->getReservations();
 
 
 ?>
