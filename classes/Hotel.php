@@ -121,11 +121,13 @@ class Hotel {
                     </tr>
                 </thead>
                 <tbody>';
-                foreach ($this->chambres as $chambre) {
-                    $result .= "<tr><td>Chambre ". $chambre->getnumChambre(). "</td><td>
-                    ". $chambre->getPrixNuit(). "€ </td><td> ". $chambre->getWifiIcon(). "</td><td>".$chambre->getDisponible() ."</td></tr>";
-                } return $result; '
-                </tbody>
+                    foreach ($this->chambres as $chambre) {
+                        $result .= "<tr><td>Chambre ". $chambre->getnumChambre(). "</td><td>"
+                        . $chambre->getPrixNuit(). "€ </td><td> "
+                        . $chambre->getWifiIcon(). "</td><td>"
+                        . $chambre->getDisponible() ."</td></tr>";
+                    } return $result;
+                '</tbody>
             </table>'; 
     }
 
@@ -140,6 +142,7 @@ class Hotel {
     }
 
     public function getChambresLibres() {
+
         $result = $this->getNbChambres() - $this->getNbReservations() ;
         return $result;
     } 
@@ -155,9 +158,9 @@ class Hotel {
             return $result = "<h4>Réservations de l'hôtel ".$this." :</h4>
             Aucune réservation<br>";  
         } else {
-        foreach ($this->chambres as $chambre) {
+            foreach ($this->chambres as $chambre) {
 
-         $result .= $chambre->getReservations() ;
+            $result .= $chambre->getReservations() ;
         }return $result;
         }
     }

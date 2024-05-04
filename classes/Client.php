@@ -36,11 +36,6 @@ class Client {
 
         return $this;
     }
- 
-    /*public function getReservations()
-    {
-        return $this->reservations;
-    }*/
 
     public function setReservations($reservations)
     {

@@ -60,7 +60,7 @@ class Chambre {
 
     public function getWifi()
     {   if ($this->wifi == true) {
-        return "oui";
+            return "oui";
         } else {
             return "non";
         }
@@ -97,7 +97,7 @@ class Chambre {
     {   if ($this->disponible == true) {
         return "<span class='uk-label-success'>DISPONIBLE</span>";
         } else {
-            return "<span class='uk-label-danger'>RESERVEE</span>";
+        return "<span class='uk-label-danger'>RESERVEE</span>";
         }
     }
 
@@ -112,11 +112,11 @@ class Chambre {
     {   $result = "";
         
         foreach ($this->reservations as $reservation) {
-            $result.= $reservation->getClient().
-            " - ". $reservation->getChambre() .
-           " - du ". 
-            $reservation->getdateArrivee()->format("d-m-y")." au ". 
-            $reservation->getDateDepart()->format("d-m-y") ."<br>";"<br>";
+            $result.= $reservation->getClient(). " - "
+            . $reservation->getChambre() . " - du "
+            . $reservation->getdateArrivee()->format("d-m-y"). " au "
+            . $reservation->getDateDepart()->format("d-m-y"). "<br>";
+            "<br>";
         } return $result;
         
     }
